@@ -1,19 +1,19 @@
-let numeroKm = prompt( "Quanti Chilometri dovrai percorrere? : ");
-let etaPasseggero = prompt( "Quanti anni hai? : ");
+let numeroKm = prompt( "Quanti Chilometri dovrai percorrere?  ");
+let etaPasseggero = prompt( "Quanti anni hai?  ");
+
+const prezzoKm = 0.21;
 
 console.log(numeroKm, etaPasseggero)
 
-const prezzoKm = '0.21';
+
 
 if ( etaPasseggero <18 || etaPasseggero >65 ){
-    document.writeln('numeroKm * prezzoKm')
-    if ( etaPasseggero <18){
-        document.writeln('numeroKm * prezzoKm * 0.8')
-    }else{
-        document.writeln('numeroKm * prezzoKm * 0.6')
-    }
-    
+    let sconto = (etaPasseggero <18) ? 0.8 : 0.6;
+    let costoScontato = numeroKm * prezzoKm * sconto;
+    document.writeln("il prezzo del biglietto è" + costoScontato.toFixed(2) )
+
 }else{
-    document.writeln('numeroKm * prezzoKm')
+    let costoSenzaSconto = numeroKm * prezzoKm;
+    document.writeln("il prezzo del biglietto è" + costoSenzaSconto.toFixed(2))
 }
 
